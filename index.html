@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Endereço e DDD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulte Endereços e DDDs</h1>
+
+        <div class="tabs">
+            <button class="tab-link active" data-tab="cep-tab">Buscar por CEP</button>
+            <button class="tab-link" data-tab="address-tab">Buscar por Endereço</button>
+            <button class="tab-link" data-tab="ddd-tab">DDDs por Estado</button>
+            <button class="tab-link" data-tab="city-tab">DDD por Cidade</button>
+        </div>
+
+        <!-- CEP Search Tab -->
+        <div id="cep-tab" class="tab-content active">
+            <p class="tab-description">Digite o CEP para encontrar o endereço completo e o DDD.</p>
+            <div class="search-box">
+                <input type="text" id="cep-input" placeholder="Digite o CEP (só números)" maxlength="8">
+                <button id="search-cep-btn">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Address Search Tab -->
+        <div id="address-tab" class="tab-content">
+            <p class="tab-description">Digite UF, cidade e rua para encontrar o CEP e o DDD.</p>
+            <div class="search-box vertical">
+                <input type="text" id="state-input" placeholder="UF (ex: SP)" maxlength="2">
+                <input type="text" id="city-input" placeholder="Cidade (ex: São Paulo)">
+                <input type="text" id="street-input" placeholder="Rua (ex: Av. Paulista)">
+                <button id="search-address-btn">Buscar</button>
+            </div>
+        </div>
+
+        <!-- DDDs by State Tab -->
+        <div id="ddd-tab" class="tab-content">
+            <p class="tab-description">Selecione um estado para ver a lista de DDDs correspondentes e as cidades de cada DDD.</p>
+            <div class="search-box">
+                <select id="state-select" class="state-select"></select>
+            </div>
+        </div>
+
+        <!-- DDD by City Tab -->
+        <div id="city-tab" class="tab-content">
+            <p class="tab-description">Descubra o(s) DDD(s) de uma cidade. Selecione o estado e digite o nome da cidade.</p>
+            <div class="search-box vertical">
+                <select id="state-city-select" class="state-select"></select>
+                <input type="text" id="city-ddd-input" placeholder="Cidade (ex: Campinas)">
+                <button id="search-city-ddd-btn">Buscar DDD da Cidade</button>
+            </div>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <!-- Results will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="script.js?v=3"></script>
+</body>
+</html>
